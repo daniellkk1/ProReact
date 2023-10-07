@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import iconsteam from './assets/images/Steam-Simbolo-.png'
+import { DivContainer, Navigation, List, DivTotal} from "./styles";
+import Rotas from "./routes/router";
+import { Link } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App(){
+  return(
+    <DivTotal>
+      <DivContainer>
+        <Navigation>
+          <img src={iconsteam}  style={{height: 40, width: 60}}/>
+          <List>Loja</List>
+          <Link to='/'>
+            <List>Coleção</List>
+          </Link>
+          <List>Comunidade</List>
+          <List>Usuário</List>
+        </Navigation>
+      </DivContainer>
+
+      <Rotas/>
+    </DivTotal>
+  )
 }
-
-export default App;
